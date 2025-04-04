@@ -24,16 +24,14 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative max-w-6xl mx-auto px-4 py-12">
+    <div className="relative max-w-8xl mx-auto px-4 py-12">
       <div className="bg-default-50 p-6 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-primary mb-4">Get in Touch</h2>
         <p className="text-default-700 mb-4">
           I'm always open to new opportunities and collaborations. Feel free to reach out!
         </p>
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Contact Form */}
         <div className="md:col-span-2 bg-default-50 p-6 rounded-lg shadow-lg">
           <h3 className="text-xl font-bold text-primary mb-6">Send a Message</h3>
           <form onSubmit={handleSubmit} className="space-y-4">
