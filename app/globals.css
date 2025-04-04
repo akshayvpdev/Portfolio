@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-foreground/20;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.bg-grid-white-10 {
+  background-image: linear-gradient(to right, rgb(255 255 255 / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.1) 1px, transparent 1px);
+}
+
+.bg-grid-16 {
+  background-size: 4rem 4rem;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  75% { transform: rotate(-15deg); }
+}
+
+.animate-wave {
+  animation: wave 1.5s infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+html {
+  cursor: none;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  )
+  rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+}
+
+/* Hide cursor on interactive elements */
+a, button, [role="button"] {
+  cursor: none;
+}
+
+/* Cursor animations */
+.cursor-dot {
+  transition: transform 0.3s ease;
+}
+
+.cursor-ring {
+  transition: transform 0.3s ease;
+}
+
+/* Cursor hover effects */
+a:hover ~ .cursor-dot,
+button:hover ~ .cursor-dot,
+[role="button"]:hover ~ .cursor-dot {
+  transform: scale(1.5);
+}
+
+a:hover ~ .cursor-ring,
+button:hover ~ .cursor-ring,
+[role="button"]:hover ~ .cursor-ring {
+  transform: scale(0.5);
+  opacity: 0.5;
+}
+
+/* Custom Animations */
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(14deg); }
+  40% { transform: rotate(-8deg); }
+  60% { transform: rotate(14deg); }
+  80% { transform: rotate(-4deg); }
+  100% { transform: rotate(10deg); }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 2.5s ease infinite;
+  transform-origin: 70% 70%;
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3B82F6, #8B5CF6);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563EB, #7C3AED);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Text Gradient */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 
+         text-white font-semibold hover:shadow-lg hover:shadow-purple-500/30 
+         transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-full bg-white/10 text-white font-semibold 
+         hover:bg-white/20 backdrop-blur-sm transition-all duration-300;
+}
+
+/* Card Styles */
+.card {
+  @apply backdrop-blur-lg bg-white/10 p-6 rounded-2xl border border-white/10 
+         hover:border-white/20 transition-all duration-500 shadow-2xl;
+}
+
+/* Section Styles */
+.section {
+  @apply min-h-screen flex flex-col justify-center items-center py-20 px-4 relative;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold text-gradient mb-8;
+}
+
+.section-subtitle {
+  @apply text-xl md:text-2xl text-gray-300 mb-12 text-center max-w-2xl;
+}
