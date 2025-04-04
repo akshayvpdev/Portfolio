@@ -19,18 +19,6 @@ const Typewriter = dynamic(() => import("@/components/ui/typewriter"), {
   ssr: false,
 });
 
-const BackgroundBlob = ({ className }: { className?: string }) => (
-  <motion.div
-    className={`absolute bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-20 blur-3xl ${className}`}
-    animate={{
-      scale: [1, 1.2, 1],
-      rotate: [0, 90, 180, 270, 360],
-      borderRadius: ["60% 40% 30% 70%", "30% 60% 70% 40%", "60% 40% 30% 70%"],
-    }}
-    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-  />
-);
-
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -75,17 +63,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black perspective-1000">
       <ScrollProgress />
-      
-      {/* 3D Background Grid */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-grid-white/10 bg-grid-16 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
         <motion.div 
           className="absolute inset-0"
           style={{ opacity }}
         >
-          <BackgroundBlob className="w-[500px] h-[500px] -top-[100px] -right-[100px]" />
-          <BackgroundBlob className="w-[600px] h-[600px] -bottom-[150px] -left-[150px]" />
-          <BackgroundBlob className="w-[400px] h-[400px] top-[30%] left-[20%]" />
+
         </motion.div>
       </div>
 
@@ -183,27 +167,27 @@ export default function Home() {
               transition={{ duration: 0.8 }} 
               className="min-h-screen flex flex-col justify-center p-10"
             >
-              <PerspectiveCard className="max-w-4xl mx-auto transform-gpu">
+              <div className=" mx-auto">
                 <div className="glass-card p-8 rounded-2xl border border-white/10 backdrop-blur-xl">
                   <GradientText className="text-3xl font-semibold mb-8">About Me</GradientText>
                   <About/>
                 </div>
-              </PerspectiveCard>
+              </div>
             </motion.section>
 
             <motion.section 
               id="projects" 
-              initial={{ opacity: 0, y: 50 }} 
+              initial={{ opacity: 0, y: 30 }} 
               whileInView={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.8 }} 
+              transition={{ duration: 0.1 }} 
               className="min-h-screen flex flex-col justify-center p-10"
             >
-              <PerspectiveCard className="max-w-4xl mx-auto transform-gpu">
+              <div className="mx-auto">
                 <div className="glass-card p-8 rounded-2xl border border-white/10 backdrop-blur-xl">
                   <GradientText className="text-3xl font-semibold mb-8">Projects</GradientText>
                   <Projects />
                 </div>
-              </PerspectiveCard>
+              </div>
             </motion.section>
 
             <motion.section 
@@ -213,12 +197,12 @@ export default function Home() {
               transition={{ duration: 0.8 }} 
               className="min-h-screen flex flex-col justify-center p-10"
             >
-              <PerspectiveCard className="max-w-4xl mx-auto transform-gpu">
+              <div className="mx-auto">
                 <div className="glass-card p-8 rounded-2xl border border-white/10 backdrop-blur-xl">
                   <GradientText className="text-3xl font-semibold mb-8">Blog</GradientText>
                   <Blog />
                 </div>
-              </PerspectiveCard>
+              </div>
             </motion.section>
 
             <motion.section 
@@ -228,12 +212,12 @@ export default function Home() {
               transition={{ duration: 0.8 }} 
               className="min-h-screen flex flex-col justify-center p-10"
             >
-              <PerspectiveCard className="max-w-4xl mx-auto transform-gpu">
+              <div className=" mx-auto">
                 <div className="glass-card p-8 rounded-2xl border border-white/10 backdrop-blur-xl">
                   <GradientText className="text-3xl font-semibold mb-8">Documentation</GradientText>
                   <Docs />
                 </div>
-              </PerspectiveCard>
+              </div>
             </motion.section>
 
             <motion.section 
@@ -243,12 +227,12 @@ export default function Home() {
               transition={{ duration: 0.8 }} 
               className="min-h-screen flex flex-col justify-center p-10"
             >
-              <PerspectiveCard className="max-w-4xl mx-auto transform-gpu">
+              <div className=" mx-auto">
                 <div className="glass-card p-8 rounded-2xl border border-white/10 backdrop-blur-xl">
                   <GradientText className="text-3xl font-semibold mb-8">Contact</GradientText>
                   <Contact />
                 </div>
-              </PerspectiveCard>
+              </div>
             </motion.section>
           </>
         )}

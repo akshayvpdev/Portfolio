@@ -4,7 +4,7 @@ import { title } from "@/components/primitives";
 
 export default function DocsPage() {
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="relative max-w-6xl mx-auto px-4 py-12">
       <div className="bg-default-50 p-6 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-primary mb-4">Documentation & Guides</h2>
         <p className="text-default-700 mb-4">

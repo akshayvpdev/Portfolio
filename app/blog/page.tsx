@@ -4,7 +4,7 @@ import { title } from "@/components/primitives";
 
 export default function BlogPage() {
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="relative max-w-6xl mx-auto px-4 py-12">
       <div className="space-y-6">
         {/* Featured Post */}
         <div className="bg-default-50 rounded-lg shadow-lg overflow-hidden">
