@@ -109,7 +109,7 @@ export default function About() {
                 { name: 'Next.js', level: 85 },
                 { name: 'TypeScript', level: 80 },
                 { name: 'Node.js', level: 85 },
-                { name: 'AWS', level: 75 },
+                { name: 'GraghQL', level: 75 },
                 { name: 'UI/UX', level: 80 },
               ].map((skill, index) => (
                 <motion.div 
@@ -167,13 +167,13 @@ export default function About() {
                 </div>
                 <div className="absolute left-3 top-8 w-px h-20 bg-gradient-to-b from-purple-500 to-transparent"></div>
                 <div className="p-6 rounded-xl bg-white/5 backdrop-blur-sm">
-                  <h4 className="text-xl font-semibold text-white">Master's in Computer Science</h4>
-                  <p className="text-blue-300 font-medium mt-1">Stanford University</p>
+                  <h4 className="text-xl font-semibold text-white">Bachelors's in Mechanical Engineering</h4>
+                  <p className="text-blue-300 font-medium mt-1">APJ Abdulkalam University</p>
                   <div className="flex items-center mt-2 text-sm text-gray-400">
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
-                    <span>2018 - 2020</span>
+                    <span>2018 - 2022</span>
                   </div>
                 </div>
               </motion.div>
@@ -188,13 +188,12 @@ export default function About() {
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
                 <div className="p-6 rounded-xl bg-white/5 backdrop-blur-sm">
-                  <h4 className="text-xl font-semibold text-white">Bachelor's in Software Engineering</h4>
-                  <p className="text-blue-300 font-medium mt-1">MIT</p>
-                  <div className="flex items-center mt-2 text-sm text-gray-400">
+                <h4 className="text-xl font-semibold text-white mb-1">Full Stack Web Development</h4>
+                <p className="text-gray-400 text-sm">Luminar Technolab · 2022</p>
+                <p className="text-gray-300 mt-2">Completed a 6-month intensive MERN stack training program with hands-on projects.</p>                <div className="flex items-center mt-2 text-sm text-gray-400">
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
-                    <span>2014 - 2018</span>
                   </div>
                 </div>
               </motion.div>
@@ -224,8 +223,8 @@ export default function About() {
             {[
               { 
                 icon: '🌟',
-                name: 'Open Source', 
-                desc: 'Contributing to community',
+                name: 'Drawing', 
+                desc: 'Portrait drawing',
                 color: 'from-blue-600 to-cyan-400'
               },
               { 

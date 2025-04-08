@@ -53,7 +53,7 @@ export default function Contact() {
         </svg>
       ),
       title: "Location",
-      description: "San Francisco, CA",
+      description: "Kerala,Malappuram",
       color: "from-blue-500 to-cyan-500"
     },
     {
@@ -63,8 +63,8 @@ export default function Contact() {
         </svg>
       ),
       title: "Email",
-      description: "contact@example.com",
-      link: "mailto:contact@example.com",
+      description: "akshayvpdev@gmail.com",
+      link: "mailto:akshayvpdev@gmail.com",
       color: "from-purple-500 to-pink-500"
     },
     {
@@ -342,23 +342,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 backdrop-blur-sm p-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Working Hours</h2>
-            <div className="space-y-2 text-gray-400">
-              <p className="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Monday - Friday: 9:00 AM - 6:00 PM PST
-              </p>
-              <p className="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Weekends: Available for urgent requests
-              </p>
-            </div>
-          </div>
+          
         </motion.div>
       </div>
     </motion.div>
