@@ -5,28 +5,35 @@ import { motion } from 'framer-motion';
 import { navItems } from "@/config/site";
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.scrollY;
+      const scrollPosition = window.scrollY + 100; // Add offset to trigger section earlier
 
       // Update navbar background opacity based on scroll
       setIsScrolled(scrollPosition > 50);
 
+      // Find the current section
+      let current = '';
+      
       sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop;
-        const sectionHeight = section.clientHeight;
+        const sectionElement = section as HTMLElement;
 
-        if (
-          scrollPosition >= sectionTop - 100 &&
-          scrollPosition < sectionTop + sectionHeight - 100
-        ) {
-          setActiveSection(section.id);
+        const sectionTop = sectionElement.offsetTop;
+        const sectionHeight = sectionElement.clientHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          current = sectionElement.getAttribute('id') || '';
         }
       });
+      
+      // If we found an active section, update state
+      if (current && current !== activeSection) {
+        setActiveSection(current);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -35,7 +42,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [activeSection]);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -64,7 +71,11 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
           >
             <a 
-              href="#" 
+              href="#hero" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('hero');
+              }}
               className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
             >
               Portfolio
@@ -80,7 +91,7 @@ export default function Navbar() {
                 className={`relative px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeSection === item.hash.slice(1)
                     ? 'text-white'
-                    : 'text-gray-300 hover:text-white'
+                    : 'text-gray-300'
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -101,7 +112,7 @@ export default function Navbar() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="ml-4 p-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-colors"
+            className="ml-4 p-2 rounded-full bg-white/10 backdrop-blur-sm transition-colors"
           >
             <svg
               className="w-5 h-5 text-gray-300"
@@ -123,7 +134,7 @@ export default function Navbar() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="p-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-colors"
+              className="p-2 rounded-full bg-white/10 backdrop-blur-sm transition-colors"
             >
               <svg
                 className="w-6 h-6 text-gray-300"

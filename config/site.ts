@@ -1,31 +1,13 @@
 export type SiteConfig = typeof siteConfig;
 
 export const navItems = [
-  {
-    name: "Home",
-    hash: "#hero",
-  },
-  {
-    name: "About",
-    hash: "#about",
-  },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
-    name: "Blog",
-    hash: "#blog",
-  },
-  {
-    name: "Docs",
-    hash: "#docs",
-  },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
-] as const;
+  { name: "Home", hash: "#hero" },
+  { name: "About", hash: "#about" },
+  { name: "Projects", hash: "#projects" },
+  { name: "Blog", hash: "#blog" },
+  { name: "Docs", hash: "#docs" },
+  { name: "Contact", hash: "#contact" },
+];
 
 export const siteConfig = {
   name: "John Doe | Portfolio",
