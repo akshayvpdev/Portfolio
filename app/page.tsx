@@ -137,12 +137,12 @@ export default function Home() {
             transition={{ delay: 0.1, duration: 0.5 }}
             className="space-y-6 max-w-2xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
+            {/* <h2 className="text-4xl md:text-5xl font-bold text-white">
               I'm{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
                 John Doe
               </span>
-            </h2>
+            </h2> */}
             <h3 className="text-2xl md:text-3xl font-semibold">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
                 Full Stack Developer
